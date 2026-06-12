@@ -55,8 +55,8 @@ LLM_TIMEOUT_SECONDS = _int_env("LLM_TIMEOUT_SECONDS", 30)
 # Upload limits.
 MAX_UPLOAD_MB = _int_env("MAX_UPLOAD_MB", 10)
 MAX_UPLOAD_BYTES = MAX_UPLOAD_MB * 1024 * 1024
-# Sized for the peak-season scenario from the interviews: importers dumping
-# 200-300 label applications at once.
+# Sized for peak season, when importers submit 200-300 label applications
+# at once.
 MAX_LABELS_PER_BATCH = _int_env("MAX_LABELS_PER_BATCH", 300)
 
 # How many vision calls may run at once during a batch.

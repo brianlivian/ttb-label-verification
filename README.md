@@ -1,7 +1,7 @@
 # TTB Label Extraction Prototype
 
 AI-powered extraction and intrinsic compliance checking of alcohol beverage
-label images, built as a take-home prototype for the Compliance Division.
+label images — a prototype review tool for TTB COLA label compliance.
 
 **Live demo:** https://ttb-labels-app.politesand-253a8765.eastus.azurecontainerapps.io
 (Azure Container Apps; auto-deployed from `main` by GitHub Actions via OIDC —
@@ -115,9 +115,9 @@ as the slowest single label, not 20× one label.
 
 ## Key decisions and rationale
 
-**All AI calls are server-side.** The IT interview was explicit that the TTB
-network blocks outbound traffic to most domains — the previous vendor's
-client-side ML calls died at the firewall. The browser here only ever talks
+**All AI calls are server-side.** Federal agency networks block outbound
+traffic to most external domains, so client-side calls to AI endpoints
+would silently fail inside the firewall. The browser here only ever talks
 to this app: every fetch is same-origin, and all static assets (CSS, JS,
 fonts) are served by the app itself — no CDNs, nothing third-party from the
 client. An agent inside the TTB firewall needs exactly one domain
@@ -148,8 +148,9 @@ memory and discarded when the request ends; there is no database, no file
 storage, no logging of document contents. Even the Excel export is built in
 memory from results the client echoes back and streamed straight to the
 download — nothing is written to disk. For a prototype handling federal
-data this sidesteps PII and document-retention obligations entirely (per the
-IT interview: "we're not storing anything sensitive for this exercise").
+data this sidesteps PII and document-retention obligations entirely —
+storage, if ever needed, becomes a deliberate addition rather than an
+accident.
 
 **The government warning verdict is computed in code, not by the model.**
 27 CFR 16.21 requires the statement verbatim with "GOVERNMENT WARNING:" in
@@ -163,8 +164,8 @@ a "not bold" result downgrades to NEEDS REVIEW rather than FAIL.
 **Extraction confidence is surfaced, not hidden.** The model is instructed
 never to guess: a value it cannot read confidently comes back with low
 confidence and becomes NEEDS REVIEW instead of a silent pass — the right
-failure direction for a compliance tool, and the path that handles Jenny's
-"weird angles, bad lighting, glare" cases honestly.
+failure direction for a compliance tool, and the path that handles
+real-world weird-angle, bad-lighting, and glare photos honestly.
 
 **Matching and comparison are separate, swappable layers.** Record linkage
 (which catalog product is this label?) uses LinkTransformer — `merge_k_judge`
@@ -177,7 +178,7 @@ threshold (0.80 by default) and labels results "embedding retrieval" vs
 deterministic, unit-tested code: numeric equivalence for alcohol content and
 net contents (including proof conversion and European decimal commas),
 unicode-aware normalized text for brand and class/type, near-misses flagged
-for review. This still honors Dave's judgment cases — "STONE'S THROW" vs
+for review. Reviewer-style judgment is preserved — "STONE'S THROW" vs
 "Stone's Throw" passes with a note.
 
 **Two deployment scenarios, one toggle.** Every check runs in one of two
@@ -214,7 +215,8 @@ auto-width columns — generated server-side with openpyxl and never touching
 disk.
 
 **UI built for the actual users.** Half the team is over 50 and the
-benchmark user is Sarah's 73-year-old mother: one linear two-step flow
+tool must work for the least technical reviewer on a team: one linear
+two-step flow
 (upload → results), serif 19px base type, large high-contrast buttons,
 plain-language errors, and verdicts as big green/red badges ("PASS" /
 "FAIL" / "NEEDS REVIEW") rather than icons alone. Batch results show a
@@ -284,26 +286,23 @@ Two findings worth highlighting:
 
 ## Assumptions
 
-- **Interpretation of the firewall constraint (cloud AI APIs).** The IT
-  interview notes warn that the TTB network "blocks outbound traffic to a
-  lot of domains … keep that in mind if you're thinking about cloud APIs,"
-  and describe the prior vendor's failure: software running *inside* the
-  agency network calling out to ML endpoints. This prototype interprets
-  that as a constraint on traffic originating inside the TTB network — so
-  the client makes zero third-party calls (every browser request is
-  same-origin, all assets self-hosted), and all AI calls originate from the
-  app's own host, which runs outside the agency network. An agent behind
-  the TTB firewall needs exactly one domain reachable: the app's.
-  If the stricter intent was "no cloud AI services at all," the extraction
-  backend is isolated behind a single function (`app/verification.py`) and
-  swaps to a self-hosted open vision model on in-boundary GPU
-  infrastructure; catalog matching already runs on a fully local,
-  self-hosted embedding model. That swap carries a documented cost — on
-  CPU-only hosting a capable open vision model takes 30+ seconds per label,
-  the exact latency that killed the agency's previous scanning pilot, so it
-  is a deliberate non-choice for this prototype rather than an oversight.
-- The extracted elements are the seven "common elements" listed in the
-  assignment (brand, class/type, alcohol content, net contents, bottler
+- **Firewall constraint (cloud AI APIs).** Agency networks block outbound
+  traffic to most external domains; this prototype treats that as a
+  constraint on traffic originating inside the agency network. The client
+  therefore makes zero third-party calls (every browser request is
+  same-origin, all assets self-hosted) and all AI calls originate from the
+  app's own host, which runs outside the agency network — a reviewer
+  behind the firewall needs exactly one domain reachable: the app's.
+  If the stricter requirement were "no cloud AI services at all," the
+  extraction backend is isolated behind a single function
+  (`app/verification.py`) and swaps to a self-hosted open vision model on
+  in-boundary GPU infrastructure; catalog matching already runs on a fully
+  local, self-hosted embedding model. That swap carries a documented cost
+  (a capable open vision model on CPU-only hosting takes 30+ seconds per
+  label — far past the latency reviewers will tolerate), so it is a
+  deliberate non-choice for this prototype rather than an oversight.
+- The extracted elements are the seven common requirements across
+  beverage types (brand, class/type, alcohol content, net contents, bottler
   name/address, country of origin for imports, health warning). Remaining
   conditional Part 4/5/7 disclosures (sulfites, FD&C Yellow No. 5, age
   statements, state of distillation, …) are follow-on work — the per-field
@@ -341,7 +340,7 @@ Two findings worth highlighting:
   pretending certainty.
 - **No font-size/contrast (legibility) compliance checks** — out of scope.
 - **Batch size allows the peak-season scenario (default 300 per
-  request)** — the interviews describe importers dumping 200-300 label
+  request)** — during peak season, importers submit 200-300 label
   applications at once. Labels process concurrently (8 at a time), so a
   300-label batch takes roughly 4-5 minutes of wall clock in one request;
   a production version would queue with progress reporting instead of
