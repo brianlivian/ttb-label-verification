@@ -1,7 +1,55 @@
 # TTB Label Extraction Prototype
 
-AI-powered extraction and intrinsic compliance checking of alcohol beverage
-label images — a prototype review tool for TTB COLA label compliance.
+This project is an AI powered prototype OCR extractor for alcohol labels. It
+extracts various fields from a set of input images, then verifies whether
+those fields pass the 27 CFR set criteria.
+
+There are two model scenarios available — open source (Gemma 4) and API
+hosted (Anthropic Sonnet). Both are provided through OpenRouter and can
+easily be pivoted to Azure Government / Microsoft AI Foundry for a
+production environment. The open source model is used to simulate a
+controlled environment where APIs are blocked, whereas the API hosted model
+simulates Azure cloud hosting of the model (bypassing network firewalls).
+Gemma 4 26B can be run on a standard 32GB Windows laptop. I've implemented
+this to fulfill the requirement: *"Oh, and our network blocks outbound
+traffic to a lot of domains, so keep that in mind if you're thinking about
+cloud APIs. During the scanning vendor pilot, half their features didn't
+work because our firewall blocked connections to their ML endpoints.
+Classic."*
+
+There is also a feature to match extracted labels against the applicant
+database (COLA). The matching functionality can be applied via a toggle in
+the app. I've generated a synthetic dataset of 42 rows to simulate the
+database. Once toggled, the app not only verifies the extracted labels for
+correctness, but also verifies matches against the database. To do this, I
+use the package "LinkTransformer". This is an AI powered record linkage
+package that uses vector embeddings and an LLM judge to tie records across
+datasets together without matching keys. Thus, the methodology matches
+records that have spelling discrepancies and flags them for review, rather
+than simply missing them entirely. I've implemented this to fulfill the
+requirement: *"The thing about label review is there's nuance. You can't
+just pattern match everything. Like, I had one last week where the brand
+name was 'STONE'S THROW' on the label but 'Stone's Throw' in the
+application. Technically a mismatch? Sure. But it's obviously the same
+thing. You need judgment."*
+
+The app is hosted in an Azure container on my personal Microsoft account
+(free tier). It is connected to my GitHub through a CI/CD pipeline: every
+push to `main` runs the test suite, builds the Docker image, and
+automatically deploys a new revision to the container app — authenticated
+via OIDC, so no cloud credentials are stored anywhere in the repo. The
+result is that the live link below always serves the latest commit.
+
+---
+
+> **A note on authorship:** everything below this line — the detailed
+> documentation, architecture rationale, and evaluation write-up — was
+> AI-generated (Claude) during development and reviewed by me. The code,
+> tests, and evaluation dataset were built the same way: an AI
+> pair-programming workflow in which I directed the design decisions and
+> validated the results.
+
+---
 
 **Live demo:** https://ttb-labels-app.politesand-253a8765.eastus.azurecontainerapps.io
 (Azure Container Apps; auto-deployed from `main` by GitHub Actions via OIDC —
