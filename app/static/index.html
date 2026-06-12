@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TTB Label Extraction</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <header>
+    <h1>Label Extraction &amp; Check</h1>
+    <p class="subtitle">Upload label images — get the required elements and the government warning check for each.</p>
+  </header>
+
+  <main>
+    <!-- Step 1: label images -->
+    <section class="step" id="step-labels">
+      <h2><span class="step-number">1</span> Upload Label Images</h2>
+      <p class="step-hint">Add one label, or many at once to check a whole batch.</p>
+      <label class="button button-secondary" for="label-input">Choose Label Images</label>
+      <input type="file" id="label-input" accept=".jpg,.jpeg,.png,.webp,.gif,image/*" multiple hidden>
+      <ul id="label-list" class="label-list"></ul>
+    </section>
+
+    <!-- Step 2: product catalog -->
+    <section class="step" id="step-catalog">
+      <h2><span class="step-number">2</span> Product Catalog</h2>
+      <label class="toggle-row">
+        <input type="checkbox" id="match-toggle">
+        Match labels against the product catalog
+      </label>
+      <div id="catalog-controls" class="disabled-zone">
+        <p class="step-hint">Each label is automatically matched against the product catalog and
+        cross-checked. Download the base dataset to analyze or modify it — add rows, change values —
+        then re-upload your copy to match against it instead.</p>
+        <button class="button button-secondary" id="dataset-button">Download Base Dataset (Excel)</button>
+        <label class="button button-secondary" for="dataset-input">Upload Modified Dataset</label>
+        <input type="file" id="dataset-input" accept=".csv,.xlsx" hidden>
+        <span id="dataset-status" role="status"></span>
+        <button id="dataset-remove" class="link-button hidden">Remove</button>
+      </div>
+    </section>
+
+    <!-- Run the check -->
+    <section class="step check-step">
+      <fieldset class="model-choice">
+        <legend>AI model scenario</legend>
+        <label class="radio-row">
+          <input type="radio" name="model-mode" value="hosted" checked>
+          <span><strong>Hosted API model</strong> (Claude Sonnet) — the Azure-hosted deployment scenario</span>
+        </label>
+        <label class="radio-row">
+          <input type="radio" name="model-mode" value="open">
+          <span><strong>Open-weights model</strong> (Gemma) — the federal-laptop scenario: these weights
+          could run on-premises with no external API; catalog matching also stays fully local in this mode</span>
+        </label>
+      </fieldset>
+      <button class="button button-primary" id="extract-button">Check Labels</button>
+      <div class="banner banner-error hidden" id="error-banner" role="alert"></div>
+      <div class="loading hidden" id="loading" role="status">
+        <div class="spinner"></div>
+        <span id="loading-text">Checking labels…</span>
+      </div>
+    </section>
+
+    <!-- Step 3: results -->
+    <section class="step hidden" id="results-section">
+      <h2><span class="step-number">3</span> Results</h2>
+      <p id="results-counts" class="summary-counts"></p>
+      <p class="step-hint">The full field-by-field results are in the Excel workbook.</p>
+      <div class="actions">
+        <button class="button button-primary" id="download-button">Download Excel Results</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Prototype — extracted values are AI-read and should be confirmed by an agent. Nothing you upload is stored.</p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

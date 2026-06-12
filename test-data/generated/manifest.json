@@ -1,0 +1,610 @@
+[
+  {
+    "filename": "ttb-101-copper-canyon.png",
+    "product_id": "TTB-101",
+    "brand": "Copper Canyon",
+    "defect": "render defect: warning printed \"birthdefects\" (words merged) \u2014 a genuine verbatim violation",
+    "expected_verdict": "fail",
+    "label": {
+      "class_type": "Straight Rye Whiskey",
+      "alcohol_content": "45% Alc./Vol. (90 Proof)",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled and Bottled by Copper Canyon Distilling Co., Boulder, CO",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Copper Canyon",
+      "class_type": "Straight Rye Whiskey",
+      "alcohol_content": "45% Alc./Vol. (90 Proof)",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled and Bottled by Copper Canyon Distilling Co., Boulder, CO",
+      "country_of_origin": ""
+    },
+    "render_defect": "render defect: warning printed \"birthdefects\" (words merged) \u2014 a genuine verbatim violation"
+  },
+  {
+    "filename": "ttb-102-silver-pine.png",
+    "product_id": "TTB-102",
+    "brand": "Silver Pine",
+    "defect": "none",
+    "expected_verdict": "pass",
+    "label": {
+      "class_type": "Vodka",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled by Silver Pine Spirits, Boise, ID",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Silver Pine",
+      "class_type": "Vodka",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled by Silver Pine Spirits, Boise, ID",
+      "country_of_origin": ""
+    }
+  },
+  {
+    "filename": "ttb-103-harbor-light.png",
+    "product_id": "TTB-103",
+    "brand": "Harbor Light",
+    "defect": "none",
+    "expected_verdict": "pass",
+    "label": {
+      "class_type": "London Dry Gin",
+      "alcohol_content": "47% Alc./Vol. (94 Proof)",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled and Bottled by Harbor Light Gin Works, Portland, ME",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Harbor Light",
+      "class_type": "London Dry Gin",
+      "alcohol_content": "47% Alc./Vol. (94 Proof)",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled and Bottled by Harbor Light Gin Works, Portland, ME",
+      "country_of_origin": ""
+    }
+  },
+  {
+    "filename": "ttb-104-casa-dorada.png",
+    "product_id": "TTB-104",
+    "brand": "Casa Dorada",
+    "defect": "none",
+    "expected_verdict": "pass",
+    "label": {
+      "class_type": "Tequila Reposado 100% Agave",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Produced and Bottled by Destileria Casa Dorada, Jalisco, Mexico",
+      "country_of_origin": "Product of Mexico",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Casa Dorada",
+      "class_type": "Tequila Reposado 100% Agave",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Produced and Bottled by Destileria Casa Dorada, Jalisco, Mexico",
+      "country_of_origin": "Product of Mexico"
+    }
+  },
+  {
+    "filename": "ttb-105-blackwater-bay.png",
+    "product_id": "TTB-105",
+    "brand": "Blackwater Bay",
+    "defect": "none",
+    "expected_verdict": "pass",
+    "label": {
+      "class_type": "Caribbean Spiced Rum",
+      "alcohol_content": "35% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Bottled by Blackwater Bay Rum Co., Charleston, SC",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Blackwater Bay",
+      "class_type": "Caribbean Spiced Rum",
+      "alcohol_content": "35% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Bottled by Blackwater Bay Rum Co., Charleston, SC",
+      "country_of_origin": ""
+    }
+  },
+  {
+    "filename": "ttb-106-old-coopers.png",
+    "product_id": "TTB-106",
+    "brand": "Old Cooper's",
+    "defect": "none",
+    "expected_verdict": "pass",
+    "label": {
+      "class_type": "Kentucky Straight Bourbon Whiskey",
+      "alcohol_content": "50% Alc./Vol. (100 Proof)",
+      "net_contents": "375 mL",
+      "bottler_address": "Distilled and Bottled by Old Cooper's Distillery, Bardstown, KY",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Old Cooper's",
+      "class_type": "Kentucky Straight Bourbon Whiskey",
+      "alcohol_content": "50% Alc./Vol. (100 Proof)",
+      "net_contents": "375 mL",
+      "bottler_address": "Distilled and Bottled by Old Cooper's Distillery, Bardstown, KY",
+      "country_of_origin": ""
+    }
+  },
+  {
+    "filename": "ttb-107-glen-marrow.png",
+    "product_id": "TTB-107",
+    "brand": "Glen Marrow",
+    "defect": "render defect: warning missing the GOVERNMENT WARNING: prefix and several words",
+    "expected_verdict": "fail",
+    "label": {
+      "class_type": "Single Malt Scotch Whisky",
+      "alcohol_content": "43% Alc./Vol.",
+      "net_contents": "700 mL",
+      "bottler_address": "Distilled and Bottled in Scotland by Glen Marrow Distillers, Speyside, Scotland",
+      "country_of_origin": "Product of Scotland",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Glen Marrow",
+      "class_type": "Single Malt Scotch Whisky",
+      "alcohol_content": "43% Alc./Vol.",
+      "net_contents": "700 mL",
+      "bottler_address": "Distilled and Bottled in Scotland by Glen Marrow Distillers, Speyside, Scotland",
+      "country_of_origin": "Product of Scotland"
+    },
+    "render_defect": "render defect: warning missing the GOVERNMENT WARNING: prefix and several words"
+  },
+  {
+    "filename": "ttb-108-frost-peak.png",
+    "product_id": "TTB-108",
+    "brand": "Frost Peak",
+    "defect": "none",
+    "expected_verdict": "pass",
+    "label": {
+      "class_type": "American Dry Gin",
+      "alcohol_content": "44% Alc./Vol.",
+      "net_contents": "1 L",
+      "bottler_address": "Distilled by Frost Peak Botanicals, Bozeman, MT",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Frost Peak",
+      "class_type": "American Dry Gin",
+      "alcohol_content": "44% Alc./Vol.",
+      "net_contents": "1 L",
+      "bottler_address": "Distilled by Frost Peak Botanicals, Bozeman, MT",
+      "country_of_origin": ""
+    }
+  },
+  {
+    "filename": "ttb-109-rio-verde.png",
+    "product_id": "TTB-109",
+    "brand": "Rio Verde",
+    "defect": "none",
+    "expected_verdict": "pass",
+    "label": {
+      "class_type": "Mezcal Artesanal",
+      "alcohol_content": "46% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Produced by Mezcaleria Rio Verde, Oaxaca, Mexico",
+      "country_of_origin": "Product of Mexico",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Rio Verde",
+      "class_type": "Mezcal Artesanal",
+      "alcohol_content": "46% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Produced by Mezcaleria Rio Verde, Oaxaca, Mexico",
+      "country_of_origin": "Product of Mexico"
+    }
+  },
+  {
+    "filename": "ttb-110-golden-prairie.png",
+    "product_id": "TTB-110",
+    "brand": "Golden Prairie",
+    "defect": "render defect: warning duplicates \"of alcoholic\" across a line break \u2014 a genuine verbatim violation",
+    "expected_verdict": "fail",
+    "label": {
+      "class_type": "Lager Beer",
+      "alcohol_content": "",
+      "net_contents": "12 FL OZ",
+      "bottler_address": "Brewed and Bottled by Golden Prairie Brewing Co., Omaha, NE",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Golden Prairie",
+      "class_type": "Lager Beer",
+      "alcohol_content": "4.8% Alc./Vol.",
+      "net_contents": "12 FL OZ",
+      "bottler_address": "Brewed and Bottled by Golden Prairie Brewing Co., Omaha, NE",
+      "country_of_origin": ""
+    },
+    "render_defect": "render defect: warning duplicates \"of alcoholic\" across a line break \u2014 a genuine verbatim violation"
+  },
+  {
+    "filename": "ttb-111-willow-creek.png",
+    "product_id": "TTB-111",
+    "brand": "Willow Creek",
+    "defect": "none",
+    "expected_verdict": "pass",
+    "label": {
+      "class_type": "Red Table Wine",
+      "alcohol_content": "",
+      "net_contents": "750 mL",
+      "bottler_address": "Produced and Bottled by Willow Creek Winery, Napa, CA",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Willow Creek",
+      "class_type": "Red Table Wine",
+      "alcohol_content": "12.5% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Produced and Bottled by Willow Creek Winery, Napa, CA",
+      "country_of_origin": ""
+    }
+  },
+  {
+    "filename": "ttb-112-north-fork.png",
+    "product_id": "TTB-112",
+    "brand": "North Fork",
+    "defect": "none",
+    "expected_verdict": "pass",
+    "label": {
+      "class_type": "Apple Brandy",
+      "alcohol_content": "42% Alc./Vol. (84 Proof)",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled by North Fork Orchards, Hudson, NY",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "North Fork",
+      "class_type": "Apple Brandy",
+      "alcohol_content": "42% Alc./Vol. (84 Proof)",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled by North Fork Orchards, Hudson, NY",
+      "country_of_origin": ""
+    }
+  },
+  {
+    "filename": "ttb-113-iron-gate.png",
+    "product_id": "TTB-113",
+    "brand": "Iron Gate",
+    "defect": "warning prefix in title case (must be ALL CAPS)",
+    "expected_verdict": "fail",
+    "label": {
+      "class_type": "Vodka",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled by Iron Gate Distillery, Detroit, MI",
+      "country_of_origin": "",
+      "warning": "titlecase"
+    },
+    "catalog": {
+      "brand_name": "Iron Gate",
+      "class_type": "Vodka",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled by Iron Gate Distillery, Detroit, MI",
+      "country_of_origin": ""
+    }
+  },
+  {
+    "filename": "ttb-114-cedar-hollow.png",
+    "product_id": "TTB-114",
+    "brand": "Cedar Hollow",
+    "defect": "warning says \"alcohol\" instead of \"alcoholic beverages\"",
+    "expected_verdict": "fail",
+    "label": {
+      "class_type": "Tennessee Whiskey",
+      "alcohol_content": "43% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled and Bottled by Cedar Hollow Distillery, Lynchburg, TN",
+      "country_of_origin": "",
+      "warning": "reworded"
+    },
+    "catalog": {
+      "brand_name": "Cedar Hollow",
+      "class_type": "Tennessee Whiskey",
+      "alcohol_content": "43% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled and Bottled by Cedar Hollow Distillery, Lynchburg, TN",
+      "country_of_origin": ""
+    }
+  },
+  {
+    "filename": "ttb-115-santa-lucia.png",
+    "product_id": "TTB-115",
+    "brand": "Santa Lucia",
+    "defect": "government warning entirely missing",
+    "expected_verdict": "fail",
+    "label": {
+      "class_type": "Tequila Blanco",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Produced and Bottled by Tequilera Santa Lucia, Jalisco, Mexico",
+      "country_of_origin": "Product of Mexico",
+      "warning": "missing"
+    },
+    "catalog": {
+      "brand_name": "Santa Lucia",
+      "class_type": "Tequila Blanco",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Produced and Bottled by Tequilera Santa Lucia, Jalisco, Mexico",
+      "country_of_origin": "Product of Mexico"
+    }
+  },
+  {
+    "filename": "ttb-116-bay-and-anchor.png",
+    "product_id": "TTB-116",
+    "brand": "Bay & Anchor",
+    "defect": "net contents missing",
+    "expected_verdict": "fail",
+    "label": {
+      "class_type": "Navy Strength Gin",
+      "alcohol_content": "57% Alc./Vol. (114 Proof)",
+      "net_contents": "",
+      "bottler_address": "Distilled by Bay & Anchor Spirits, Annapolis, MD",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Bay & Anchor",
+      "class_type": "Navy Strength Gin",
+      "alcohol_content": "57% Alc./Vol. (114 Proof)",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled by Bay & Anchor Spirits, Annapolis, MD",
+      "country_of_origin": ""
+    },
+    "render_defect": "render defect (in addition to the planted missing net contents): the warning prints \"beveranges\" and literal asterisks around the prefix \u2014 only character-faithful transcription catches this"
+  },
+  {
+    "filename": "ttb-117-kings-hollow.png",
+    "product_id": "TTB-117",
+    "brand": "Kings Hollow",
+    "defect": "label ABV 40% contradicts catalog 45% (catalog cross-check)",
+    "expected_verdict": "fail",
+    "label": {
+      "class_type": "Straight Bourbon Whiskey",
+      "alcohol_content": "40% Alc./Vol. (80 Proof)",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled and Bottled by Kings Hollow Distilling, Frankfort, KY",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Kings Hollow",
+      "class_type": "Straight Bourbon Whiskey",
+      "alcohol_content": "45% Alc./Vol. (90 Proof)",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled and Bottled by Kings Hollow Distilling, Frankfort, KY",
+      "country_of_origin": ""
+    }
+  },
+  {
+    "filename": "ttb-118-white-falcon.png",
+    "product_id": "TTB-118",
+    "brand": "White Falcon",
+    "defect": "bottler name-and-address statement missing",
+    "expected_verdict": "fail",
+    "label": {
+      "class_type": "Vodka",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "White Falcon",
+      "class_type": "Vodka",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled by White Falcon Spirits, Fargo, ND",
+      "country_of_origin": ""
+    }
+  },
+  {
+    "filename": "ttb-119-stone-mill.png",
+    "product_id": "TTB-119",
+    "brand": "Stone Mill",
+    "defect": "class/type designation missing",
+    "expected_verdict": "fail",
+    "label": {
+      "class_type": "",
+      "alcohol_content": "45% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled by Stone Mill Distillery, Lancaster, PA",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Stone Mill",
+      "class_type": "Straight Bourbon Whiskey",
+      "alcohol_content": "45% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled by Stone Mill Distillery, Lancaster, PA",
+      "country_of_origin": ""
+    }
+  },
+  {
+    "filename": "ttb-120-kiyomi.png",
+    "product_id": "TTB-120",
+    "brand": "Kiyomi",
+    "defect": "appears imported (Japanese brewer) but no country of origin statement",
+    "expected_verdict": "fail",
+    "label": {
+      "class_type": "Junmai Sake",
+      "alcohol_content": "15% Alc./Vol.",
+      "net_contents": "720 mL",
+      "bottler_address": "Brewed and Bottled by Kiyomi Shuzo, Kyoto, Japan",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Kiyomi",
+      "class_type": "Junmai Sake",
+      "alcohol_content": "15% Alc./Vol.",
+      "net_contents": "720 mL",
+      "bottler_address": "Brewed and Bottled by Kiyomi Shuzo, Kyoto, Japan",
+      "country_of_origin": ""
+    }
+  },
+  {
+    "filename": "ttb-103-harbor-light-grainy.png",
+    "product_id": "TTB-103",
+    "brand": "Harbor Light",
+    "defect": "none",
+    "expected_verdict": "pass",
+    "label": {
+      "class_type": "London Dry Gin",
+      "alcohol_content": "47% Alc./Vol. (94 Proof)",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled and Bottled by Harbor Light Gin Works, Portland, ME",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Harbor Light",
+      "class_type": "London Dry Gin",
+      "alcohol_content": "47% Alc./Vol. (94 Proof)",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled and Bottled by Harbor Light Gin Works, Portland, ME",
+      "country_of_origin": ""
+    },
+    "degraded": "heavy sensor grain"
+  },
+  {
+    "filename": "ttb-105-blackwater-bay-lowres.png",
+    "product_id": "TTB-105",
+    "brand": "Blackwater Bay",
+    "defect": "none",
+    "expected_verdict": "pass",
+    "label": {
+      "class_type": "Caribbean Spiced Rum",
+      "alcohol_content": "35% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Bottled by Blackwater Bay Rum Co., Charleston, SC",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Blackwater Bay",
+      "class_type": "Caribbean Spiced Rum",
+      "alcohol_content": "35% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Bottled by Blackwater Bay Rum Co., Charleston, SC",
+      "country_of_origin": ""
+    },
+    "degraded": "low resolution + JPEG artifacts"
+  },
+  {
+    "filename": "ttb-108-frost-peak-blur-dim.png",
+    "product_id": "TTB-108",
+    "brand": "Frost Peak",
+    "defect": "none",
+    "expected_verdict": "pass",
+    "label": {
+      "class_type": "American Dry Gin",
+      "alcohol_content": "44% Alc./Vol.",
+      "net_contents": "1 L",
+      "bottler_address": "Distilled by Frost Peak Botanicals, Bozeman, MT",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Frost Peak",
+      "class_type": "American Dry Gin",
+      "alcohol_content": "44% Alc./Vol.",
+      "net_contents": "1 L",
+      "bottler_address": "Distilled by Frost Peak Botanicals, Bozeman, MT",
+      "country_of_origin": ""
+    },
+    "degraded": "motion blur, dim lighting"
+  },
+  {
+    "filename": "ttb-113-iron-gate-angled.png",
+    "product_id": "TTB-113",
+    "brand": "Iron Gate",
+    "defect": "warning prefix in title case (must be ALL CAPS)",
+    "expected_verdict": "fail",
+    "label": {
+      "class_type": "Vodka",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled by Iron Gate Distillery, Detroit, MI",
+      "country_of_origin": "",
+      "warning": "titlecase"
+    },
+    "catalog": {
+      "brand_name": "Iron Gate",
+      "class_type": "Vodka",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Distilled by Iron Gate Distillery, Detroit, MI",
+      "country_of_origin": ""
+    },
+    "degraded": "photographed at an angle + grain"
+  },
+  {
+    "filename": "ttb-106-old-coopers-glare.png",
+    "product_id": "TTB-106",
+    "brand": "Old Cooper's",
+    "defect": "none",
+    "expected_verdict": "pass",
+    "label": {
+      "class_type": "Kentucky Straight Bourbon Whiskey",
+      "alcohol_content": "50% Alc./Vol. (100 Proof)",
+      "net_contents": "375 mL",
+      "bottler_address": "Distilled and Bottled by Old Cooper's Distillery, Bardstown, KY",
+      "country_of_origin": "",
+      "warning": "ok"
+    },
+    "catalog": {
+      "brand_name": "Old Cooper's",
+      "class_type": "Kentucky Straight Bourbon Whiskey",
+      "alcohol_content": "50% Alc./Vol. (100 Proof)",
+      "net_contents": "375 mL",
+      "bottler_address": "Distilled and Bottled by Old Cooper's Distillery, Bardstown, KY",
+      "country_of_origin": ""
+    },
+    "degraded": "glare across the middle of the label"
+  },
+  {
+    "filename": "ttb-115-santa-lucia-wrecked.png",
+    "product_id": "TTB-115",
+    "brand": "Santa Lucia",
+    "defect": "government warning entirely missing",
+    "expected_verdict": "fail",
+    "label": {
+      "class_type": "Tequila Blanco",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Produced and Bottled by Tequilera Santa Lucia, Jalisco, Mexico",
+      "country_of_origin": "Product of Mexico",
+      "warning": "missing"
+    },
+    "catalog": {
+      "brand_name": "Santa Lucia",
+      "class_type": "Tequila Blanco",
+      "alcohol_content": "40% Alc./Vol.",
+      "net_contents": "750 mL",
+      "bottler_address": "Produced and Bottled by Tequilera Santa Lucia, Jalisco, Mexico",
+      "country_of_origin": "Product of Mexico"
+    },
+    "degraded": "near-illegible: tiny, crushed, noisy"
+  }
+]
