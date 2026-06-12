@@ -4,6 +4,12 @@ on:
   push:
     branches: [main]
 
+# A newer push supersedes any in-flight run — prevents an older commit's
+# deploy job from finishing after (and overwriting) a newer one's.
+concurrency:
+  group: build-deploy-main
+  cancel-in-progress: true
+
 permissions:
   contents: read
   packages: write
