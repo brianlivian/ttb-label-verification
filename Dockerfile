@@ -4,6 +4,12 @@ FROM python:3.12-slim
 RUN useradd --create-home appuser
 WORKDIR /home/appuser/app
 
+# gcc/g++ are needed to build hdbscan (a LinkTransformer dependency that
+# ships no wheel for this base image).
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends gcc g++ \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
