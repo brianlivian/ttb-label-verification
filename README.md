@@ -3,6 +3,10 @@
 AI-powered extraction and intrinsic compliance checking of alcohol beverage
 label images, built as a take-home prototype for the Compliance Division.
 
+**Live demo:** https://ttb-labels-app.politesand-253a8765.eastus.azurecontainerapps.io
+(Azure Container Apps; auto-deployed from `main` by GitHub Actions via OIDC —
+every push builds, tests, and ships a new revision tagged by commit SHA.)
+
 An agent uploads one or many label images. For each label the app extracts
 the required label elements — brand name, class/type designation, alcohol
 content, net contents, bottler/producer name and address, and country of
@@ -64,9 +68,12 @@ docker build -t ttb-label-extract .
 docker run -p 8080:8080 -e OPENROUTER_API_KEY=sk-or-... ttb-label-extract
 ```
 
-The container listens on `$PORT` (default 8080), so it deploys unchanged to
-Azure Container Apps. A GitHub Actions workflow builds and pushes the image
-to GitHub Container Registry on every push to `main`.
+The container listens on `$PORT` (default 8080) and is deployed to Azure
+Container Apps. The GitHub Actions workflow runs the tests, builds and
+pushes the image to GitHub Container Registry, and deploys the new revision
+to Azure on every push to `main` (OIDC federated login — no stored cloud
+credentials; commit-SHA image tags make any revision a one-command
+rollback).
 
 ### Tests
 
