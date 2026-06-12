@@ -33,12 +33,11 @@ name was 'STONE'S THROW' on the label but 'Stone's Throw' in the
 application. Technically a mismatch? Sure. But it's obviously the same
 thing. You need judgment."*
 
-The app is hosted in an Azure container on my personal Microsoft account
-(free tier). It is connected to my GitHub through a CI/CD pipeline: every
-push to `main` runs the test suite, builds the Docker image, and
-automatically deploys a new revision to the container app — authenticated
-via OIDC, so no cloud credentials are stored anywhere in the repo. The
-result is that the live link below always serves the latest commit.
+The app URL is hosted in an Azure container on my personal Microsoft
+account (free tier). It is connected to my GitHub through a CI/CD pipeline:
+every push to `main` automatically deploys the commit seamlessly to the
+Azure container. The container can later be configured easily for the
+proper security and authentication methods, including Entra ID.
 
 ---
 
